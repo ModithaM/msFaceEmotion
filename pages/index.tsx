@@ -57,7 +57,7 @@ export default function Home() {
               transform: `translate(${mousePosition.x * 10}px, ${mousePosition.y * 10}px)`
             }}>
             <h1 className={styles.title}>
-              <span className={styles.emotiPrefix}>Emotin</span>
+              <span className={styles.emotiPrefix}>Emotion</span>
               <span className={styles.essenceSuffix}>Essence</span>
               <span className={styles.titleEmoji}>✨</span>
             </h1>
