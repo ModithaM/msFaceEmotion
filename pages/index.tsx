@@ -22,7 +22,7 @@ export default function Home() {
   return (
     <div className={styles.container}>
       <Head>
-        <title>MS Club | EmotinEssence</title>
+        <title>MS Club | EmotionEssence</title>
         <meta name="description" content="See What Your Emotions Reveal. AI-powered emotion detection" />
         <meta property="og:image" key="ogImage" content="https://msclubsliit.org/assets/ms_club_logo_light.png" />
         <link rel="icon" href="https://msclubsliit.org/favicon.ico" />
