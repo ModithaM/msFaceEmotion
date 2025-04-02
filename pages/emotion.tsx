@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import Head from "next/head";
-import styles from "../styles/Home.module.css";
+import styles from "../styles/Emotion.module.css";
 import Webcam from "react-webcam";
 import * as faceapi from "face-api.js";
 import { drawEmoji } from "../utils/drawEmoji";
