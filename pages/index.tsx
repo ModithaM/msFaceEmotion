@@ -38,7 +38,7 @@ export default function Home() {
             className={styles.logo}
             src="https://msclubsliit.org/assets/ms_club_logo_light.png"
             alt="MS Club Logo"
-            width={320} // Specify width
+            width={340} // Specify width
             height={170}
           />
           <span className={styles.cornerEmoji}>💡</span>
