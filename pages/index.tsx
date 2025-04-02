@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import Image from 'next/image';
+import Head from "next/head";
 import styles from "../styles/Home.module.css";
 import { useEffect, useState } from 'react';
 
@@ -20,6 +21,12 @@ export default function Home() {
 
   return (
     <div className={styles.container}>
+      <Head>
+        <title>MS Club | EmotinEssence</title>
+        <meta name="description" content="See What Your Emotions Reveal. AI-powered emotion detection" />
+        <meta property="og:image" key="ogImage" content="https://msclubsliit.org/assets/ms_club_logo_light.png" />
+        <link rel="icon" href="https://msclubsliit.org/favicon.ico" />
+      </Head>
       <div className={styles.backgroundAnimation}></div>
       <div className={styles.floatingEmojis}>
         <span className={styles.emoji} style={{ top: '10%', left: '5%' }}>😊</span>
@@ -38,7 +45,7 @@ export default function Home() {
             className={styles.logo}
             src="https://msclubsliit.org/assets/ms_club_logo_light.png"
             alt="MS Club Logo"
-            width={340} // Specify width
+            width={340}
             height={170}
           />
           <span className={styles.cornerEmoji}>💡</span>
@@ -50,7 +57,7 @@ export default function Home() {
               transform: `translate(${mousePosition.x * 10}px, ${mousePosition.y * 10}px)`
             }}>
             <h1 className={styles.title}>
-              <span className={styles.emotiPrefix}>Emoti</span>
+              <span className={styles.emotiPrefix}>Emotin</span>
               <span className={styles.essenceSuffix}>Essence</span>
               <span className={styles.titleEmoji}>✨</span>
             </h1>
