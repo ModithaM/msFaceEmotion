@@ -1,10 +1,11 @@
+import Link from 'next/link';
 
 export default function Home() {
 
   return (
     <>
       <h2>Home Page</h2>
-      <a href="/emotion">Emotion Page</a>
+      <Link href="/emotion">Emotion Page</Link>
     </>
   );
 }
