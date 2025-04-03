@@ -4,9 +4,9 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
-    "lint": "next lint"
+     "build": "next build",
+     "start": "next start",
+     "lint": "next lint"
   },
   "dependencies": {
     "@types/react-webcam": "^3.0.0",

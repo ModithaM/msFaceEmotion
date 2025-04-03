@@ -42,3 +42,77 @@
   -webkit-transform: scaleX(-1);
   transform: scaleX(-1);
 }
+
+/* .video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.main {
+  position: relative;
+  width: 100%;
+  height: 0;
+  padding-bottom: 75%; /* Adjust based on your aspect ratio */
+/*
+} */
+
+
+/* New styles for expression display */
+.expressionContainer {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin: 10px 0 20px 0;
+}
+
+.expressionBox {
+  display: flex;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.7);
+  padding: 8px 16px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.expressionEmoji {
+  width: 40px;
+  height: 40px;
+  margin-right: 10px;
+}
+
+.expressionText {
+  color: white;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+/* Loader styles */
+.loaderContainer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.8);
+  z-index: 1000;
+}
+
+.loader {
+  border: 6px solid #f3f3f3;
+  border-top: 6px solid #3498db;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
