@@ -1,16 +1,31 @@
 import { useEffect, useRef, useState } from "react";
 import Image from 'next/image';
+import Link from 'next/link';
 import Head from "next/head";
 import styles from "../styles/Emotion.module.css";
 import Webcam from "react-webcam";
 import * as faceapi from "face-api.js";
-import Loader from "../components/Loader";
 
-export default function Home() {
-  const webcamRef = useRef<Webcam>(null);
-  const canvasRef = useRef<HTMLCanvasElement>(null);
-  const [isLoaded, setIsLoaded] = useState<boolean>(false);
-  const [currentExpression, setCurrentExpression] = useState<string>("");
+export default function Emotion() {
+  const webcamRef = useRef(null);
+  const canvasRef = useRef(null);
+  const [isLoaded, setIsLoaded] = useState(false);
+  const [currentExpression, setCurrentExpression] = useState("");
+  
+  // Generate random positions for floating emojis
+  const floatingEmojis = [
+    { emoji: "😊", top: "10%", left: "5%" },
+    { emoji: "😍", top: "15%", right: "8%" },
+    { emoji: "🤔", top: "30%", left: "12%" },
+    { emoji: "😌", top: "60%", left: "8%" },
+    { emoji: "🥳", top: "70%", right: "10%" },
+    { emoji: "😎", top: "85%", left: "15%" },
+    { emoji: "🤩", top: "80%", right: "5%" },
+    { emoji: "😂", top: "20%", left: "20%" },
+    { emoji: "😱", top: "40%", right: "12%" },
+    { emoji: "🙃", top: "90%", left: "8%" },
+    { emoji: "🥰", top: "5%", right: "15%" }
+  ];
 
   const loadModels = async () => {
     const MODEL_URL = `/models`;
@@ -36,7 +51,7 @@ export default function Home() {
     await handleLoadWaiting();
     if (webcamRef.current && canvasRef.current) {
       setIsLoaded(true);
-      const webcam = webcamRef.current.video as HTMLVideoElement;
+      const webcam = webcamRef.current.video;
       const canvas = canvasRef.current;
 
       // Set canvas dimensions to match video
@@ -85,11 +100,30 @@ export default function Home() {
     <>
       <div className={styles.container}>
         <Head>
-          <title>Face2Emoji</title>
-          <meta name="description" content="Display emotion from facial expressions" />
+          <title>EmotionEssence | Camera</title>
+          <meta name="description" content="AI-powered emotion detection" />
           <meta property="og:image" key="ogImage" content="/emojis/happy.png" />
           <link rel="icon" href="/emojis/happy.png" />
         </Head>
+        
+       
+
+        {/* Floating emojis background */}
+        <div className={styles.floatingEmojis}>
+          {floatingEmojis.map((item, index) => (
+            <span 
+              key={index} 
+              className={styles.floatingEmoji} 
+              style={{ 
+                top: item.top, 
+                left: item.left, 
+                right: item.right 
+              }}
+            >
+              {item.emoji}
+            </span>
+          ))}
+        </div>
 
         {/* Expression display outside the camera */}
         {currentExpression && (
@@ -120,8 +154,16 @@ export default function Home() {
             style={{ display: 'none' }} // Hide the canvas as we're not using it for display
           />
         </main>
+
+        
       </div>
-      {!isLoaded && <Loader />}
+      
+      {!isLoaded && (
+        <div className={styles.loaderContainer}>
+          <div className={styles.loader}></div>
+          <p className={styles.loaderText}>Loading emotion detection...</p>
+        </div>
+      )}
     </>
   );
 }
