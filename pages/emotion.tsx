@@ -153,10 +153,22 @@ export default function Emotion() {
             className={styles.video}
             style={{ display: 'none' }} // Hide the canvas as we're not using it for display
           />
+          <div className={styles.buttonContainer}>
+            <Link href="/">
+              <a className={styles.backButton}>
+              <span className={styles.buttonIcon}>←</span>
+                Back to Home
+                
+              </a>
+            </Link>
+          </div>
         </main>
 
         
+       
+          
       </div>
+      
       
       {!isLoaded && (
         <div className={styles.loaderContainer}>
